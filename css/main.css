@@ -1,0 +1,185 @@
+/* @override http://localhost/sxswcrush/css/main.css */
+
+/* RESET */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,button {  
+	margin:0; 
+	padding:0; 
+} 
+table { 
+	border-collapse:collapse; 
+	border-spacing:0; 
+} 
+fieldset,img {  
+	border:0; 
+} 
+address,caption,cite,code,dfn,em,strong,th,var { 
+	font-style:normal; 
+	font-weight:normal; 
+} 
+ol,ul { 
+	list-style:none; 
+} 
+caption,th { 
+	text-align:left; 
+} 
+
+q:before,q:after { 
+	content:''; 
+} 
+abbr,acronym {
+	border:0; 
+}
+/*---------- END RESET ----------*/
+
+/*-------------------------------------------+
+|                                            |
+|            MAIN STRUCTURE STYLES           |
+|                                            |
++-------------------------------------------*/
+html{
+	font-size:100%;
+	min-height:100%;
+}
+body{
+	font-size:62.5%;
+	font-family:'Helvetica Neue', Helvetica, sans-serif;
+	background-color: #f20947;
+	color: #999;
+	font-weight: lighter;
+}
+
+#wrapper {
+	margin: 0 auto 2em;
+	overflow:hidden;
+	padding:5em;
+	width:65em;
+	background-color: white;
+	height: 100%;
+}
+
+#header p {
+	font-size: 2em;
+}
+#header {
+	padding: 4.5em 0;
+}
+#header img {
+	display:block;
+	margin:0 auto 3.5em;	
+}
+
+.halfcol {
+	width: 47%;
+	margin-right: 5%;
+	float: left;
+	
+}
+.footer {
+	display:block;
+	margin:0 auto;
+	text-align:center;
+	width:57em;
+}
+.footer p {
+	font-size: 1.1em;
+	color: #551828;
+	letter-spacing: 1px;
+}
+.footer a {
+	color: #ccc;
+
+}
+.footer a:hover {
+	color: #ccc;
+
+}
+.image-left {
+	float: left;
+	margin: 0 2em 2em 0;
+}
+.last {
+	margin-right: 0 !important;
+}
+.clear {
+	clear:  both;
+}
+
+/*---------- FONTS -----------*/
+h1,h2,h3,h4,h5,h6 { 
+	font-size:100%; 
+	font-weight:lighter; 
+} 
+p  {
+	font-size: 1.8em;
+	line-height: 130%;
+}
+
+
+
+h3 {
+	color:black;
+	font-size:1.3em;
+	font-style:italic;
+	font-weight:800;
+	margin-bottom:0.3em;
+}
+
+h1 {
+	font-size: 3.7em;
+	color: #ef3030;
+}
+a {
+	color: #fc0367;
+	text-decoration: none;
+	border-bottom: 1px dotted #fc0367;
+}
+a:hover {
+	color: red;
+	text-decoration: none;
+	border-bottom: 1px dotted red;
+}
+
+/*---------- END FONTS -----------*/
+textarea {
+	color:#333;
+	display:block;
+	font-family:'Helvetica Neue', Helvetica, sans-serif;
+	margin:2em 0 1em;
+	padding:.7em;
+	font-size: 2em;
+	width:30.7em;
+	border: 4px solid white;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	background-color: #e5fff5;
+	-webkit-box-shadow:0 0px 10px rgba(0, 0, 0, 0.2);
+   -moz-box-shadow:0 0px 10px rgba(0, 0, 0, 0.2);
+	box-shadow:0 0px 10px rgba(0, 0, 0, 0.2);
+}
+input.button {
+	-moz-border-radius:2px;
+	-webkit-border-radius: 2px;
+	background-color:#fc0367;
+	border:0 none;
+	font-family:verdana;
+	padding: .7em;
+	text-transform:uppercase;
+	vertical-align:super;
+	width:10em;
+	color: white;
+}
+
+div.tweet-button {
+	text-align: right;	
+}
+
+input.button:hover {
+	background-color: yellowgreen;
+}
+img#avatar {
+	margin-right: 5px;
+	vertical-align: top;
+}
+img.logo {
+	margin-bottom: 1em;
+}
