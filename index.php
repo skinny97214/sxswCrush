@@ -10,6 +10,20 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript" ></script>
 <script src="scripts/jquery.livetwitter.js" type="text/javascript"></script>
 
+<script type="text/javascript" src="scripts/charCount.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){	
+		//default usage
+		$("#twitter_msg").charCount();
+		//custom usage
+		$("#message2").charCount({
+			allowed: 50,		
+			warning: 20,
+			counterText: 'Characters left: '	
+		});
+	});
+</script>
+
 </head>
 <body>
 
@@ -25,11 +39,12 @@ if(isset($_POST['twitter_msg']) && !isset($error)){?>
 <?php } else if(isset($error)){?>
 <div class="msg">Error: Shart! We effed up.</div>
 <?php }?>
-		<form action="insertTwitterMsg.php" method="post" name="twitter_form">
-		<textarea name="twitter_msg" type="text" id="twitter_msg" size="40" maxlength="140"/ onclick="document.twitter_form.twitter_msg.value='';">My SXSW crush is... because she's so smart.</textarea>
-		<div class="tweet-button">
-		<input class="button" type="submit" name="button" id="button" value="tweet"></div>
+		<form action="insertTwitterMsg.php" method="post" name="twitter_form" class="twitter_form">
+		<textarea name="twitter_msg" type="text" id="twitter_msg" size="40" maxlength="140"/ onclick="document.twitter_form.twitter_msg.value='';" >My SXSW crush is... because she's so smart.</textarea>
+		<input class="button tweet-button" type="submit" name="button" id="button" value="tweet">
 		</form>
+		
+		
 		
 	<h2>Latest love sent from <a href="http://twitter.com/sxswcrush">@sxswcrush</a></h2>
 		<div id="twitterUserTimeline" class="tweets"></div>

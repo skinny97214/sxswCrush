@@ -16,12 +16,6 @@
 			</dict>
 			<dict>
 				<key>DocumentURL</key>
-				<string>file://localhost/Library/WebServer/Documents/sxswcrush/insertTwitterMsg.php</string>
-				<key>StateType</key>
-				<string>DefaultTab</string>
-			</dict>
-			<dict>
-				<key>DocumentURL</key>
 				<string>file://localhost/Users/crystalb/.Trash/example.html</string>
 				<key>StateType</key>
 				<string>DefaultTab</string>

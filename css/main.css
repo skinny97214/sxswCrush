@@ -79,6 +79,7 @@ body{
 	margin:0 auto;
 	text-align:center;
 	width:57em;
+	padding-bottom: 2em;
 }
 .footer p {
 	font-size: 1.1em;
@@ -188,10 +189,25 @@ textarea {
 	border: 4px solid white;
 	-moz-border-radius: 2px;
 	-webkit-border-radius: 2px;
-	background-color: #e5fff5;
+	background-color: #e5ecff;
 	-webkit-box-shadow:0 0px 10px rgba(0, 0, 0, 0.2);
    -moz-box-shadow:0 0px 10px rgba(0, 0, 0, 0.2);
 	box-shadow:0 0px 10px rgba(0, 0, 0, 0.2);
+	text-align: left;
+}
+
+span.counter {
+	font-size: 2.2em;
+text-align: right;
+}
+form.twitter_form {
+	text-align: right;
+	margin-bottom: 3em;
+	display: block;
+}
+
+input.tweet-button {
+	margin-left: 1em;
 }
 input.button {
 	-moz-border-radius:2px;
