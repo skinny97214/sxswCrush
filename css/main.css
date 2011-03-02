@@ -114,7 +114,11 @@ p  {
 	line-height: 130%;
 }
 
-
+h2 {
+	font-size: 2em;
+	font-weight: normal;
+	margin-bottom: .5em;
+}
 
 h3 {
 	color:black;
@@ -140,6 +144,39 @@ a:hover {
 }
 
 /*---------- END FONTS -----------*/
+
+/*---LIVE TWITTER TIMELINE----*/
+	.tweet {
+		background: white;
+		margin: 4px 0;
+		width: 100%;
+		padding: 8px;
+		
+		border: 1px dotted #e6e
+	}
+	.tweet img {
+		float: left;
+		margin: 0 8px 4px 0;
+	}
+	.tweet .text {
+		margin: 0;
+	}
+	.tweet .time a {
+		font-size: 70%;
+		color: #888;
+		white-space: nowrap;
+		text-decoration: none;
+		border-bottom-color: #666 ;
+	}
+	.tweet .time a:hover {
+		text-decoration: underline;
+	}
+	#twitterSearch .tweet {
+		min-height: 24px;
+	}
+	#twitterSearch .tweet .text {
+		margin-left: 32px;
+	}
 textarea {
 	color:#333;
 	display:block;

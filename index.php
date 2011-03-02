@@ -7,6 +7,9 @@
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
 <title>SXSW Crush</title>
 <LINK REL="STYLESHEET" TYPE="text/css" HREF="css/main.css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript" ></script>
+<script src="scripts/jquery.livetwitter.js" type="text/javascript"></script>
+
 </head>
 <body>
 
@@ -27,6 +30,29 @@ if(isset($_POST['twitter_msg']) && !isset($error)){?>
 		<div class="tweet-button">
 		<input class="button" type="submit" name="button" id="button" value="tweet"></div>
 		</form>
+		
+	<h2>Latest love sent from <a href="http://twitter.com/sxswcrush">@sxswcrush</a></h2>
+		<div id="twitterUserTimeline" class="tweets"></div>
+	
+		<script type="text/javascript">
+	
+			// Basic usage
+			$('#twitterSearch').liveTwitter('bacon', {limit: 5, rate: 5000});
+			$('#twitterUserTimeline').liveTwitter('sxswcrush', {limit: 15, refresh: false, mode: 'user_timeline'});
+	
+			// Changing the query
+			$('#searchLinks a').each(function(){
+				var query = $(this).text();
+				$(this).click(function(){
+					// Update the search
+					$('#twitterSearch').liveTwitter(query);
+					// Update the header
+					$('#searchTerm').text(query);
+					return false;
+				});
+			});
+	
+		</script>
 		
 	</div>
 <div class="footer"><p><a href="http://www.twitter.com/skinny">a project by @skinny</a> &nbsp;. &nbsp;<a href="/">skinnywhitegirl.com</a></p></div>
