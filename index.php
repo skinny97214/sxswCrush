@@ -34,13 +34,43 @@
 <p>If you don’t know the hottie’s name, tag it <strong>#isawyou</strong></p>
 <!-- Send message to Twitter -->
 <?php
-if(isset($_POST['twitter_msg']) && !isset($error)){?>
-<div class="msg"><?php echo $twitter_status ?></div>
-<?php } else if(isset($error)){?>
-<div class="msg">Error: Shart! We effed up.</div>
-<?php }?>
-		<form action="insertTwitterMsg.php" method="post" name="twitter_form" class="twitter_form">
-		<textarea name="twitter_msg" type="text" id="twitter_msg" size="40" maxlength="140"/ onclick="document.twitter_form.twitter_msg.value='';" >My SXSW crush is... because she's so smart.</textarea>
+/**
+* post_tweet.php
+* Example of posting a tweet with OAuth
+* Latest copy of this code: 
+* http://140dev.com/twitter-api-programming-tutorials/hello-twitter-oauth-php/
+* @author Adam Green <140dev@gmail.com>
+* @license GNU Public License
+*/
+
+if(isset($_POST['tweet_text'])){
+$twitter_message=$_POST['tweet_text'];
+print "message: " . $twitter_message;
+
+print "Posting...\n";
+$result = post_tweet($twitter_message);
+print "Response code: " . $result . "\n";
+}
+
+function post_tweet($tweet_text) {
+
+  // Use Matt Harris' OAuth library to make the connection
+  // This lives at: https://github.com/themattharris/tmhOAuth
+  require_once('scripts/tmhOAuth.php');
+      require_once('../sxsw-config.php');
+
+  
+  // Make the API call
+  $connection->request('POST', 
+    $connection->url('1/statuses/update'), 
+    array('status' => $tweet_text));
+  
+  return $connection->response['code']; 
+  }
+
+?>
+		<form action="<?php echo $PHP_SELF;?>" method="post" name="twitter_form" class="twitter_form">
+		<textarea name="tweet_text" type="text" id="twitter_msg" size="40" maxlength="140"/ onclick="document.twitter_form.twitter_msg.value='';" >SHHH... We're not quite launched yet. Hold onto those crushes as we'll be launching very soon.</textarea>
 		<input class="button tweet-button" type="submit" name="button" id="button" value="tweet">
 		</form>
 		
