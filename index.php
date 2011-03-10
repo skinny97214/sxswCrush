@@ -57,7 +57,7 @@ function post_tweet($tweet_text) {
   // Use Matt Harris' OAuth library to make the connection
   // This lives at: https://github.com/themattharris/tmhOAuth
   require_once('scripts/tmhOAuth.php');
-      require_once('../sxsw-config.php');
+      require_once('sxsw-config.php');
 
   
   // Make the API call
@@ -70,13 +70,13 @@ function post_tweet($tweet_text) {
 
 ?>
 		<form action="<?php echo $PHP_SELF;?>" method="post" name="twitter_form" class="twitter_form">
-		<textarea name="tweet_text" type="text" id="twitter_msg" size="40" maxlength="140"/ onclick="document.twitter_form.twitter_msg.value='';" >SHHH... We're not quite launched yet. Hold onto those crushes as we'll be launching very soon.</textarea>
+		<textarea name="tweet_text" type="text" id="twitter_msg" size="40" maxlength="140"/ onclick="document.twitter_form.twitter_msg.value='';" >I have a crush on ... because she's so smart.</textarea>
 		<input class="button tweet-button" type="submit" name="button" id="button" value="tweet">
 		</form>
 		
 		
 		
-	<h2>Latest love sent from <a href="http://twitter.com/sxswcrush">@sxswcrush</a></h2>
+	<h2>Latest tweets sent anonymously from <a href="http://twitter.com/sxswcrush">@sxswcrush</a></h2>
 		<div id="twitterUserTimeline" class="tweets"></div>
 	
 		<script type="text/javascript">
