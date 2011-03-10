@@ -45,14 +45,17 @@
 
 if(isset($_POST['tweet_text'])){
 $twitter_message=$_POST['tweet_text'];
+$result = post_tweet($twitter_message);
+}
 
-
-if ($result == '200') {
-	print "<h3>Your tweet was successfully posted.</h3>";
-} elseif ($result == '403') {
-	print "<h3 class='error'>Oops! That was a duplicate tweet.</h3>";
-} else {
-	print "<h3 class='error'>Oh noes! Something is broken.</h3>";
+if (isset($result)) {
+	if ($result == '200') {
+		print "<h3>Your tweet was successfully posted.</h3>";
+	} elseif ($result == '403') {
+		print "<h3 class='error'>Oops! That was a duplicate tweet.</h3>";
+	} else {
+		print "<h3 class='error'>Oh noes! We have no idea what happened, but it didn't work.</h3>";
+	}
 }
 
 function post_tweet($tweet_text) {
