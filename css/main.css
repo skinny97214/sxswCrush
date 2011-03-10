@@ -122,11 +122,20 @@ h2 {
 }
 
 h3 {
-	color:black;
-	font-size:1.3em;
-	font-style:italic;
-	font-weight:800;
-	margin-bottom:0.3em;
+	background-color: #F9F7FE;
+	border-bottom: 3px dotted #CA03D6;
+	border-top: 3px dotted #CA03D6;
+	color: #5301FB;
+	display: block;
+	font-size: 3em;
+	line-height: 100%;
+	margin: 1em 0 0;
+	padding: 0.7em;
+}
+h3.error {
+	background-color: red;
+	border-color: white;
+	color: white;
 }
 
 h1 {

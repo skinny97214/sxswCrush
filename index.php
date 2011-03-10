@@ -45,11 +45,14 @@
 
 if(isset($_POST['tweet_text'])){
 $twitter_message=$_POST['tweet_text'];
-print "message: " . $twitter_message;
 
-print "Posting...\n";
-$result = post_tweet($twitter_message);
-print "Response code: " . $result . "\n";
+
+if ($result == '200') {
+	print "<h3>Your tweet was successfully posted.</h3>";
+} elseif ($result == '403') {
+	print "<h3 class='error'>Oops! That was a duplicate tweet.</h3>";
+} else {
+	print "<h3 class='error'>Oh noes! Something is broken.</h3>";
 }
 
 function post_tweet($tweet_text) {
@@ -60,7 +63,7 @@ function post_tweet($tweet_text) {
       require_once('sxsw-config.php');
 
   
-  // Make the API call
+  // Make the API call	
   $connection->request('POST', 
     $connection->url('1/statuses/update'), 
     array('status' => $tweet_text));
