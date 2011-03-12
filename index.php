@@ -56,8 +56,13 @@
 */
 
 if(isset($_POST['tweet_text'])){
-$twitter_message=$_POST['tweet_text'];
-$result = post_tweet($twitter_message);
+  $naughty_words = "(blowjob|cock|cunt|fag|fisting|fuck|jizz|nigger|rape|slut|shit|twat|whore)";
+  if (preg_match($naughty_words, $_POST['tweet_text'])) {
+    print "<h3 class='error'>Please don't be profane or mean.</h3>";
+  } else {
+    $twitter_message=$_POST['tweet_text'];
+    $result = post_tweet($twitter_message);
+  }
 }
 
 if (isset($result)) {
@@ -88,7 +93,7 @@ function post_tweet($tweet_text) {
 
 ?>
 		<form action="<?php echo $PHP_SELF;?>" method="post" name="twitter_form" class="twitter_form">
-		<textarea name="tweet_text" type="text" id="twitter_msg" size="40" maxlength="140"/ onclick="document.twitter_form.twitter_msg.value='';" >I have a crush on ... because she's so smart.</textarea>
+		<textarea name="tweet_text" type="text" id="twitter_msg" size="40" maxlength="140"/  ></textarea>
 		<input class="button tweet-button" type="submit" name="button" id="button" value="tweet">
 		</form>
 		

@@ -99,7 +99,7 @@ class tmhOAuth {
       return str_ireplace(
         array('+', '%7E'),
         array(' ', '~'),
-        rawurlencode($data)
+        rawurlencode(stripslashes($data))
       );
     } else {
       return '';
